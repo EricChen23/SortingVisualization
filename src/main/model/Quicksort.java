@@ -8,6 +8,7 @@ public class Quicksort implements SortingAlgorithm, Runnable {
 
     @Override
     public void sort(int[] arr) {
+        System.out.println("quick");
 
     }
 }
