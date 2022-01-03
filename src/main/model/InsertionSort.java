@@ -1,10 +1,6 @@
 package model;
 
-public class InsertionSort implements SortingAlgorithm, Runnable {
-    @Override
-    public void run() {
-
-    }
+public class InsertionSort extends SortingAlgorithm {
 
     @Override
     public void sort(int[] arr) {

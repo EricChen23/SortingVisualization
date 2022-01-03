@@ -1,10 +1,7 @@
 package model;
 
-public class Quicksort implements SortingAlgorithm, Runnable {
-    @Override
-    public void run() {
+public class Quicksort extends SortingAlgorithm {
 
-    }
 
     @Override
     public void sort(int[] arr) {

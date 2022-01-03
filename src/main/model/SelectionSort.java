@@ -1,10 +1,6 @@
 package model;
 
-public class SelectionSort implements SortingAlgorithm, Runnable {
-    @Override
-    public void run() {
-
-    }
+public class SelectionSort extends SortingAlgorithm {
 
     @Override
     public void sort(int[] arr) {

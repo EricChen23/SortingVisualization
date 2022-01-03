@@ -1,10 +1,7 @@
 package model;
 
-public class Mergesort implements SortingAlgorithm, Runnable {
-    @Override
-    public void run() {
+public class Mergesort extends SortingAlgorithm {
 
-    }
 
     @Override
     public void sort(int[] arr) {
