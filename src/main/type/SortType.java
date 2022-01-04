@@ -1,4 +1,4 @@
-package model;
+package type;
 
 public enum SortType {
     BUBBLE,

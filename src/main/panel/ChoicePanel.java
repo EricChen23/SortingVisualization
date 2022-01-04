@@ -1,6 +1,7 @@
-package ui;
+package panel;
 
-import model.SortType;
+import type.SortType;
+import ui.VisualizationFrame;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -18,7 +19,7 @@ public class ChoicePanel extends JPanel {
     private JButton sort;
     private JButton reset;
 
-    private VisualizationPanel visual;
+    private VisualizationFrame frame;
 
     public ChoicePanel() {
         initButtons();
@@ -27,8 +28,8 @@ public class ChoicePanel extends JPanel {
         setBorder(new TitledBorder("Sorting Algorithms"));
     }
 
-    public void setVisual(VisualizationPanel v) {
-        visual = v;
+    public void setFrame(VisualizationFrame frame) {
+        this.frame = frame;
     }
 
     public void initButtons() {
@@ -60,19 +61,19 @@ public class ChoicePanel extends JPanel {
     public void setupListener() {
         sort.addActionListener(e -> {
             if (bubble.isSelected()) {
-                visual.sort(SortType.BUBBLE);
+                frame.start(SortType.BUBBLE);
             } else if (insertion.isSelected()) {
-                visual.sort(SortType.INSERTION);
+
             } else if (merge.isSelected()) {
-                visual.sort(SortType.MERGE);
+
             } else if (quick.isSelected()) {
-                visual.sort(SortType.QUICK);
+
             } else if (selection.isSelected()) {
-                visual.sort(SortType.SELECTION);
+
             }
         });
         reset.addActionListener(e -> {
-            visual.reset();
+
         });
     }
 }
