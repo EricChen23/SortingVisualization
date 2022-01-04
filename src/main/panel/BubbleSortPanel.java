@@ -5,29 +5,24 @@ public class BubbleSortPanel extends SortPanel{
     @Override
     public void run() {
         try {
-            boolean needNextPass = true;
-            for (int k = 1; k < arr.length && needNextPass; k++) {
-                needNextPass = false;
-                for (int i = 0; i < arr.length - k; i++) {
+            for (int i = 1; i < SIZE; i++) {
+                for (int j = 0; j < SIZE - i; j++) {
                     repaint();
                     Thread.sleep(1);
-                    if (arr[i] > arr[i + 1]) {
-                        int temp = arr[i];
-                        arr[i] = arr[i + 1];
-                        arr[i + 1] = temp;
+                    if (arr[j] > arr[j + 1]) {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
                         repaint();
                         Thread.sleep(1);
-                        needNextPass = true;
                     }
                 }
             }
+            frame.enableSort();
+            frame.getThread().interrupt();
         } catch (InterruptedException e) {
         }
         repaint();
     }
 
-    @Override
-    public void reset() {
-
-    }
 }

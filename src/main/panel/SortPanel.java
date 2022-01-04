@@ -10,11 +10,17 @@ import java.util.Random;
 public abstract class SortPanel extends JPanel implements Runnable{
     protected static final int SIZE = 120;
     protected int[] arr;
+    protected VisualizationFrame frame;
 
     public SortPanel() {
         setBorder(new TitledBorder("Visualization"));
         generateArr();
     }
+
+    public void setFrame(VisualizationFrame f) {
+        frame = f;
+    }
+
 
     private void generateArr() {
         arr = new int[SIZE];
@@ -29,8 +35,8 @@ public abstract class SortPanel extends JPanel implements Runnable{
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(Color.RED);
         for (int i = 0; i < SIZE; i++) {
+            g2.setColor(Color.RED);
             g2.fillRect((getWidth() + 30) / SIZE * (i + 1), VisualizationFrame.HEIGHT - 110, (getWidth() + 30) / SIZE - 1, - arr[i] / 20);
         }
 
@@ -38,7 +44,5 @@ public abstract class SortPanel extends JPanel implements Runnable{
 
     @Override
     public abstract void run();
-
-    public abstract void reset();
 
 }

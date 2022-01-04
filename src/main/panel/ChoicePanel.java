@@ -17,7 +17,6 @@ public class ChoicePanel extends JPanel {
     private JRadioButton selection;
 
     private JButton sort;
-    private JButton reset;
 
     private VisualizationFrame frame;
 
@@ -39,7 +38,6 @@ public class ChoicePanel extends JPanel {
         quick = new JRadioButton("Quicksort", false);
         selection = new JRadioButton("Selection Sort", false);
         sort = new JButton("sort");
-        reset = new JButton("reset");
         group = new ButtonGroup();
         group.add(bubble);
         group.add(insertion);
@@ -55,7 +53,6 @@ public class ChoicePanel extends JPanel {
         add(quick);
         add(selection);
         add(sort);
-        add(reset);
     }
 
     public void setupListener() {
@@ -63,17 +60,18 @@ public class ChoicePanel extends JPanel {
             if (bubble.isSelected()) {
                 frame.start(SortType.BUBBLE);
             } else if (insertion.isSelected()) {
-
+                frame.start(SortType.INSERTION);
             } else if (merge.isSelected()) {
-
+                frame.start(SortType.MERGE);
             } else if (quick.isSelected()) {
-
+                frame.start(SortType.QUICK);
             } else if (selection.isSelected()) {
-
+                frame.start(SortType.SELECTION);
             }
         });
-        reset.addActionListener(e -> {
+    }
 
-        });
+    public void setSort(Boolean b) {
+        sort.setEnabled(b);
     }
 }
